@@ -1,0 +1,14 @@
+#!/bin/bash
+
+if [ "$#" -ne 1 ]; then
+    echo "Используйте: $0 <IPv4-адрес>"
+    exit 1
+fi
+
+ip=$1
+
+IFS='.' read -r i1 i2 i3 i4 <<< "$ip"
+
+binary_ip=$(printf "%08d.%08d.%08d.%08d\n" $(bc <<< "obase=2; $i1") $(bc <<< "obase=2; $i2") $(bc <<< "obase=2; $i3") $(bc <<< "obase=2; $i4"))
+
+echo "$binary_ip"
