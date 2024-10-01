@@ -55,6 +55,12 @@ bash a.bash23
 
 Результат :
 
+
+```bash
+$a is not "23"
+```
+
+
 `root@LAPTOP-AJ4C61LN:~# touch a.bash23`
 
 `root@LAPTOP-AJ4C61LN:~# gedit a.bash23`
@@ -129,6 +135,12 @@ chmod +x ip.bash
 ```
 
 Результат :
+
+```bash
+.11000000.10101000.00001010.00000001
+
+```
+
 
 ![image](https://github.com/haha523/lab_2.linux/blob/29b03824217f440bb9629207708c1cbb9779413d/png%20for%20linux2/png%20for%20input%202.2.png).
 
