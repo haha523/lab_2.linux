@@ -5,10 +5,27 @@ if [ "$#" -ne 1 ]; then
     exit 1
 fi
 
-ip=$1
+ip_address=$1
 
-IFS='.' read -r i1 i2 i3 i4 <<< "$ip"
+IFS='.' read -r -a octets <<< "$ip_address"
 
-binary_ip=$(printf "%08d.%08d.%08d.%08d\n" $(bc <<< "obase=2; $i1") $(bc <<< "obase=2; $i2") $(bc <<< "obase=2; $i3") $(bc <<< "obase=2; $i4"))
+if [ "${#octets[@]}" -ne 4 ]; then
+    echo "Некорректный формат IPv4-адреса."
+    exit 1
+fi
+
+binary_octets=()
+
+for octet in "${octets[@]}"; do
+    if ! [[ "$octet" =~ ^[0-9]+$ ]] || [ "$octet" -lt 0 ] || [ "$octet" -gt 255 ]; then
+        echo "Недопустимое значение октета: $octet. Октет должен быть числом от 0 до 255."
+        exit 1
+    fi
+
+    binary_octet=$(printf "%08d" "$(bc <<< "obase=2;$octet")")
+    binary_octets+=("$binary_octet")
+done
+
+binary_ip=$(IFS=.; echo "${binary_octets[*]}")
 
 echo "$binary_ip"
