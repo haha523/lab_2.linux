@@ -114,7 +114,7 @@ echo "$binary_ip"
 
 Результат :
 
-![image](https://github.com/haha523/lab_2.linux/blob/29b03824217f440bb9629207708c1cbb9779413d/png%20for%20linux2/png%20code%202.2.png).
+![image](https://github.com/haha523/lab_2.linux/blob/b1ae0d4a5e858c6e07add506feb485673c4b355b/png%20for%20linux2/png%20code%20linux%202.2.png).
 
 
 4\. Сделайте файл исполняемым :
@@ -142,7 +142,7 @@ chmod +x ip.bash
 ```
 
 
-![image](https://github.com/haha523/lab_2.linux/blob/b1ae0d4a5e858c6e07add506feb485673c4b355b/png%20for%20linux2/png%20code%20linux%202.2.png).
+![image](https://github.com/haha523/lab_2.linux/blob/f6b580b4c194262d2850dfa33a05517cce78897c/png%20for%20linux2/png%20for%20input%202.2.png).
 
 `root@LAPTOP-AJ4C61LN:~# touch ip.bash`
 
